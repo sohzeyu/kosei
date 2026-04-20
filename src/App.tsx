@@ -1,20 +1,20 @@
 import { useState, type JSX } from "react";
-import { PRODUCTS } from "./containers/Product";
+// import { PRODUCTS } from "./containers/Product";
 /* ═══════════════════════════════════════════════════════════
    TYPES
    ═══════════════════════════════════════════════════════════ */
-// interface Product {
-//   id: number;
-//   cat: string;
-//   featured?: boolean;
-//   name: string;
-//   brand: string;
-//   model: string;
-//   price: number;
-//   stock: boolean;
-//   desc: string;
-//   specs: Record<string, string>;
-// }
+interface Product {
+  id: number;
+  cat: string;
+  featured?: boolean;
+  name: string;
+  brand: string;
+  model: string;
+  price: number;
+  stock: boolean;
+  desc: string;
+  specs: Record<string, string>;
+}
 
 interface CartItem extends Product {
   qty: number;
@@ -29,78 +29,78 @@ const BRAND = {
   nameJa: "高精密",
   name: "Kaisen Tools",
   tagline: "Japanese Precision Engineering · Singapore",
-  email: "enquiries@koseiprecision.com.sg",
+  email: "sales@kaisentools.com.sg",
   phone: "+65 6234 5678",
   address: "10 Ubi Crescent, #04-88 Ubi TechPark, Singapore 408564",
   uen: "202XXXXXXX",
   gst: "MX-XXXXXXX",
 };
 
-// const PRODUCTS: Product[] = [
-//   {
-//     id: 1, cat: "Micrometers", featured: true,
-//     name: "Digimatic Outside Micrometer", brand: "Mitutoyo", model: "MDC-25MX",
-//     price: 485, stock: true,
-//     desc: "Digital outside micrometer with 0.001mm resolution and absolute encoder. IP65 rated for workshop environments. SPC data output via RS-232C for statistical process control integration.",
-//     specs: { Range: "0–25 mm", Resolution: "0.001 mm", Accuracy: "±0.001 mm", Protection: "IP65", Output: "SPC / RS-232C" },
-//   },
-//   {
-//     id: 2, cat: "Micrometers",
-//     name: "Bore Micrometer Set", brand: "Mitutoyo", model: "368-917",
-//     price: 1240, stock: true,
-//     desc: "5-piece inside micrometer set for accurate bore and internal diameter measurement. Includes fitted case with calibration certificate.",
-//     specs: { Range: "50–300 mm", Resolution: "0.001 mm", Accuracy: "±0.003 mm", Contents: "5-piece set", Certificate: "Included" },
-//   },
-//   {
-//     id: 3, cat: "Calipers", featured: true,
-//     name: "Absolute Digimatic Caliper", brand: "Mitutoyo", model: "500-196-30",
-//     price: 320, stock: true,
-//     desc: "IP67-rated digital vernier caliper with absolute-scale encoder. No re-zeroing required at power-on. Includes data output port for SPC integration.",
-//     specs: { Range: "0–150 mm", Resolution: "0.01 mm", Accuracy: "±0.02 mm", Protection: "IP67", Origin: "Absolute" },
-//   },
-//   {
-//     id: 4, cat: "Calipers",
-//     name: "Long Jaw Vernier Caliper", brand: "Niigata Seiki", model: "SK-LJ300",
-//     price: 185, stock: true,
-//     desc: "300mm vernier caliper with extended 100mm jaw depth for measuring deep recesses, channels, and internal features. Stainless steel construction.",
-//     specs: { Range: "0–300 mm", Resolution: "0.02 mm", "Jaw Depth": "100 mm", Material: "Stainless Steel" },
-//   },
-//   {
-//     id: 5, cat: "Gauges",
-//     name: "Dial Test Indicator", brand: "Mitutoyo", model: "513-404-10E",
-//     price: 275, stock: false,
-//     desc: "Lever-type dial test indicator ideal for machine setups, surface alignment, concentricity and run-out inspection. Dovetail mounting for universal holders.",
-//     specs: { Range: "±0.14 mm", Graduation: "0.001 mm", Accuracy: "±0.003 mm", Mounting: "Dovetail" },
-//   },
-//   {
-//     id: 6, cat: "Gauges", featured: true,
-//     name: "Digimatic Height Gauge", brand: "Mitutoyo", model: "192-631-10",
-//     price: 890, stock: true,
-//     desc: "600mm digital height gauge for precision layout marking and dimensional inspection on surface plates. IP67 rated with SPC output.",
-//     specs: { Range: "0–600 mm", Resolution: "0.001 mm", Accuracy: "±0.015 mm", Protection: "IP67", Output: "SPC / RS-232C" },
-//   },
-//   {
-//     id: 7, cat: "Surface Plates",
-//     name: "Granite Surface Plate Grade A", brand: "Shinto", model: "SP-630A",
-//     price: 2100, stock: true,
-//     desc: "630×400×80mm Grade A black granite surface plate. Low thermal expansion coefficient. Supplied with fabricated steel stand and JIS-compliant calibration certificate.",
-//     specs: { Dimensions: "630×400×80 mm", Grade: "Grade A (JIS B7513)", Material: "Black Granite", Flatness: "0.006 mm", Certificate: "JIS Calibration" },
-//   },
-//   {
-//     id: 8, cat: "Torque Tools", featured: true,
-//     name: "Digital Torque Wrench 100Nm", brand: "Tohnichi", model: "DQLZ100N4-S",
-//     price: 680, stock: true,
-//     desc: "100Nm digital torque wrench with peak-hold mode, buzzer and LED alert at target torque. Internal memory for 50 measurements. JCSS traceable calibration certificate.",
-//     specs: { Range: "20–100 Nm", Accuracy: "±3%", Drive: "1/2 inch square", Display: "Digital LCD", Memory: "50 readings", Certificate: "JCSS" },
-//   },
-//   {
-//     id: 9, cat: "Torque Tools",
-//     name: "Cam-Over Torque Screwdriver Set", brand: "Tohnichi", model: "RTD12CN2-S",
-//     price: 420, stock: true,
-//     desc: "Preset cam-over torque screwdriver set. Safety cam-over mechanism prevents over-torquing. 6-piece interchangeable blade set with carry case included.",
-//     specs: { Range: "1.2–12 Nm", Accuracy: "±6%", Mechanism: "Cam-over", Blades: "6-piece set" },
-//   },
-// ];
+const PRODUCTS: Product[] = [
+  {
+    id: 1, cat: "Micrometers", featured: true,
+    name: "Digimatic Outside Micrometer", brand: "Mitutoyo", model: "MDC-25MX",
+    price: 485, stock: true,
+    desc: "Digital outside micrometer with 0.001mm resolution and absolute encoder. IP65 rated for workshop environments. SPC data output via RS-232C for statistical process control integration.",
+    specs: { Range: "0–25 mm", Resolution: "0.001 mm", Accuracy: "±0.001 mm", Protection: "IP65", Output: "SPC / RS-232C" },
+  },
+  {
+    id: 2, cat: "Micrometers",
+    name: "Bore Micrometer Set", brand: "Mitutoyo", model: "368-917",
+    price: 1240, stock: true,
+    desc: "5-piece inside micrometer set for accurate bore and internal diameter measurement. Includes fitted case with calibration certificate.",
+    specs: { Range: "50–300 mm", Resolution: "0.001 mm", Accuracy: "±0.003 mm", Contents: "5-piece set", Certificate: "Included" },
+  },
+  {
+    id: 3, cat: "Calipers", featured: true,
+    name: "Absolute Digimatic Caliper", brand: "Mitutoyo", model: "500-196-30",
+    price: 320, stock: true,
+    desc: "IP67-rated digital vernier caliper with absolute-scale encoder. No re-zeroing required at power-on. Includes data output port for SPC integration.",
+    specs: { Range: "0–150 mm", Resolution: "0.01 mm", Accuracy: "±0.02 mm", Protection: "IP67", Origin: "Absolute" },
+  },
+  {
+    id: 4, cat: "Calipers",
+    name: "Long Jaw Vernier Caliper", brand: "Niigata Seiki", model: "SK-LJ300",
+    price: 185, stock: true,
+    desc: "300mm vernier caliper with extended 100mm jaw depth for measuring deep recesses, channels, and internal features. Stainless steel construction.",
+    specs: { Range: "0–300 mm", Resolution: "0.02 mm", "Jaw Depth": "100 mm", Material: "Stainless Steel" },
+  },
+  {
+    id: 5, cat: "Gauges",
+    name: "Dial Test Indicator", brand: "Mitutoyo", model: "513-404-10E",
+    price: 275, stock: false,
+    desc: "Lever-type dial test indicator ideal for machine setups, surface alignment, concentricity and run-out inspection. Dovetail mounting for universal holders.",
+    specs: { Range: "±0.14 mm", Graduation: "0.001 mm", Accuracy: "±0.003 mm", Mounting: "Dovetail" },
+  },
+  {
+    id: 6, cat: "Gauges", featured: true,
+    name: "Digimatic Height Gauge", brand: "Mitutoyo", model: "192-631-10",
+    price: 890, stock: true,
+    desc: "600mm digital height gauge for precision layout marking and dimensional inspection on surface plates. IP67 rated with SPC output.",
+    specs: { Range: "0–600 mm", Resolution: "0.001 mm", Accuracy: "±0.015 mm", Protection: "IP67", Output: "SPC / RS-232C" },
+  },
+  {
+    id: 7, cat: "Surface Plates",
+    name: "Granite Surface Plate Grade A", brand: "Shinto", model: "SP-630A",
+    price: 2100, stock: true,
+    desc: "630×400×80mm Grade A black granite surface plate. Low thermal expansion coefficient. Supplied with fabricated steel stand and JIS-compliant calibration certificate.",
+    specs: { Dimensions: "630×400×80 mm", Grade: "Grade A (JIS B7513)", Material: "Black Granite", Flatness: "0.006 mm", Certificate: "JIS Calibration" },
+  },
+  {
+    id: 8, cat: "Torque Tools", featured: true,
+    name: "Digital Torque Wrench 100Nm", brand: "Tohnichi", model: "DQLZ100N4-S",
+    price: 680, stock: true,
+    desc: "100Nm digital torque wrench with peak-hold mode, buzzer and LED alert at target torque. Internal memory for 50 measurements. JCSS traceable calibration certificate.",
+    specs: { Range: "20–100 Nm", Accuracy: "±3%", Drive: "1/2 inch square", Display: "Digital LCD", Memory: "50 readings", Certificate: "JCSS" },
+  },
+  {
+    id: 9, cat: "Torque Tools",
+    name: "Cam-Over Torque Screwdriver Set", brand: "Tohnichi", model: "RTD12CN2-S",
+    price: 420, stock: true,
+    desc: "Preset cam-over torque screwdriver set. Safety cam-over mechanism prevents over-torquing. 6-piece interchangeable blade set with carry case included.",
+    specs: { Range: "1.2–12 Nm", Accuracy: "±6%", Mechanism: "Cam-over", Blades: "6-piece set" },
+  },
+];
 
 const CATS = ["All", "Micrometers", "Calipers", "Gauges", "Surface Plates", "Torque Tools"];
 
@@ -293,7 +293,7 @@ export default function App() {
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", flexShrink: 0 }}>
               <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.7rem", fontWeight: 600, color: "var(--rd)", lineHeight: 1 }}>高精密</span>
               <div>
-                <div style={{ fontWeight: 600, fontSize: "0.88rem", color: "var(--nv)", letterSpacing: "0.04em" }}>Kōsei Precision</div>
+                <div style={{ fontWeight: 600, fontSize: "0.88rem", color: "var(--nv)", letterSpacing: "0.04em" }}>Kaisen Tools</div>
                 <div style={{ fontSize: "0.58rem", color: "var(--mu)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Engineering Tools · Singapore</div>
               </div>
             </div>
@@ -426,7 +426,7 @@ export default function App() {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
                 <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.5rem", fontWeight: 600, color: "var(--rd)" }}>高精密</span>
-                <span style={{ fontWeight: 600, fontSize: "0.88rem", color: "rgba(255,255,255,.85)", letterSpacing: "0.04em" }}>Kōsei Precision</span>
+                <span style={{ fontWeight: 600, fontSize: "0.88rem", color: "rgba(255,255,255,.85)", letterSpacing: "0.04em" }}>Kaisen Tools</span>
               </div>
               <p style={{ fontSize: "0.8rem", lineHeight: 1.75, color: "rgba(255,255,255,.38)", maxWidth: 260 }}>Japanese precision metrology and torque instruments for Singapore's engineering sector.</p>
             </div>
@@ -446,7 +446,7 @@ export default function App() {
             </div>
           </div>
           <div style={{ maxWidth: 1280, margin: "0 auto", padding: "1rem 0", borderTop: "1px solid rgba(255,255,255,.07)", fontSize: "0.71rem", color: "rgba(255,255,255,.22)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
-            <span>© 2025 Kōsei Precision Pte Ltd · UEN: {BRAND.uen} · GST Reg: {BRAND.gst}</span>
+            <span>© 2025 Kaisen Tools Pte Ltd · UEN: {BRAND.uen} · GST Reg: {BRAND.gst}</span>
             <span>All prices in SGD, exclusive of 9% GST</span>
           </div>
         </footer>
