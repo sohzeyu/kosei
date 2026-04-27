@@ -26,14 +26,14 @@ type ModalType = "enquiry" | "checkout" | null;
    DATA LAYER — swap fetch() / API call here in production
    ═══════════════════════════════════════════════════════════ */
 const BRAND = {
-  nameJa: "高精密",
-  name: "Kaisen Tools",
+  nameJa: "改善",
+  name: "Kaizen Tools",
   tagline: "Japanese Precision Engineering · Singapore",
-  email: "sales@kaisentools.com.sg",
+  email: "sales@kaizentools.com.sg",
   phone: "+65 6234 5678",
-  address: "10 Ubi Crescent, #04-88 Ubi TechPark, Singapore 408564",
-  uen: "202XXXXXXX",
-  gst: "MX-XXXXXXX",
+  address: "60 Paya Lebar Road, #06-28, Paya Lebar Square, Singapore 409051",
+  uen: "202617552C",
+  // gst: "MX-XXXXXXX",
 };
 
 const PRODUCTS: Product[] = [
@@ -293,7 +293,7 @@ export default function App() {
             <div style={{ display: "flex", alignItems: "center", gap: "0.8rem", flexShrink: 0 }}>
               <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.7rem", fontWeight: 600, color: "var(--rd)", lineHeight: 1 }}>高精密</span>
               <div>
-                <div style={{ fontWeight: 600, fontSize: "0.88rem", color: "var(--nv)", letterSpacing: "0.04em" }}>Kaisen Tools</div>
+                <div style={{ fontWeight: 600, fontSize: "0.88rem", color: "var(--nv)", letterSpacing: "0.04em" }}>Kaizen Tools</div>
                 <div style={{ fontSize: "0.58rem", color: "var(--mu)", letterSpacing: "0.1em", textTransform: "uppercase" }}>Engineering Tools · Singapore</div>
               </div>
             </div>
@@ -426,7 +426,7 @@ export default function App() {
             <div>
               <div style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "1rem" }}>
                 <span style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "1.5rem", fontWeight: 600, color: "var(--rd)" }}>高精密</span>
-                <span style={{ fontWeight: 600, fontSize: "0.88rem", color: "rgba(255,255,255,.85)", letterSpacing: "0.04em" }}>Kaisen Tools</span>
+                <span style={{ fontWeight: 600, fontSize: "0.88rem", color: "rgba(255,255,255,.85)", letterSpacing: "0.04em" }}>Kaizen Tools</span>
               </div>
               <p style={{ fontSize: "0.8rem", lineHeight: 1.75, color: "rgba(255,255,255,.38)", maxWidth: 260 }}>Japanese precision metrology and torque instruments for Singapore's engineering sector.</p>
             </div>
@@ -446,8 +446,9 @@ export default function App() {
             </div>
           </div>
           <div style={{ maxWidth: 1280, margin: "0 auto", padding: "1rem 0", borderTop: "1px solid rgba(255,255,255,.07)", fontSize: "0.71rem", color: "rgba(255,255,255,.22)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
-            <span>© 2025 Kaisen Tools Pte Ltd · UEN: {BRAND.uen} · GST Reg: {BRAND.gst}</span>
-            <span>All prices in SGD, exclusive of 9% GST</span>
+            <span>© 2026 Kaizen Tools Pte Ltd · UEN: {BRAND.uen}</span>
+            {/* <span>© 2026 Kaizen Tools Pte Ltd · UEN: {BRAND.uen} · GST Reg: {BRAND.gst}</span> */}
+            <span>All prices in SGD</span>
           </div>
         </footer>
 
