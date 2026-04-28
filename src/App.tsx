@@ -26,7 +26,7 @@ type ModalType = "enquiry" | "checkout" | null;
    DATA LAYER — swap fetch() / API call here in production
    ═══════════════════════════════════════════════════════════ */
 const BRAND = {
-  nameJa: "改善",
+  nameJa: "高精密",
   name: "Kaizen Tools",
   tagline: "Japanese Precision Engineering · Singapore",
   email: "sales@kaizentools.com.sg",
@@ -446,7 +446,7 @@ export default function App() {
             </div>
           </div>
           <div style={{ maxWidth: 1280, margin: "0 auto", padding: "1rem 0", borderTop: "1px solid rgba(255,255,255,.07)", fontSize: "0.71rem", color: "rgba(255,255,255,.22)", display: "flex", justifyContent: "space-between", flexWrap: "wrap", gap: "0.5rem" }}>
-            <span>© 2026 Kaizen Tools Pte Ltd · UEN: {BRAND.uen}</span>
+            <span>© 2026 Kaizen Tools Pte Ltd</span>
             {/* <span>© 2026 Kaizen Tools Pte Ltd · UEN: {BRAND.uen} · GST Reg: {BRAND.gst}</span> */}
             <span>All prices in SGD</span>
           </div>
