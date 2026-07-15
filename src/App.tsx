@@ -30,7 +30,6 @@ const BRAND = {
   name: "Kaizen Tools",
   tagline: "Japanese Precision Engineering · Singapore",
   email: "sales@kaizentools.com.sg",
-  phone: "+65 6234 5678",
   address: "60 Paya Lebar Road, #06-28, Paya Lebar Square, Singapore 409051",
   uen: "202617552C",
   // gst: "MX-XXXXXXX",
@@ -432,7 +431,7 @@ export default function App() {
             </div>
             <div>
               <p style={{ color: "rgba(255,255,255,.65)", fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.75rem", fontWeight: 500 }}>Contact</p>
-              {[BRAND.email, BRAND.phone, BRAND.address].map((t, i) => <p key={i} style={{ fontSize: "0.79rem", marginBottom: "0.32rem", lineHeight: 1.6 }}>{t}</p>)}
+              {[BRAND.email, BRAND.address].map((t, i) => <p key={i} style={{ fontSize: "0.79rem", marginBottom: "0.32rem", lineHeight: 1.6 }}>{t}</p>)}
             </div>
             <div>
               <p style={{ color: "rgba(255,255,255,.65)", fontSize: "0.68rem", letterSpacing: "0.12em", textTransform: "uppercase", marginBottom: "0.75rem", fontWeight: 500 }}>Brands</p>
